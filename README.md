@@ -1,79 +1,114 @@
-# 4. 연산자
+# 6. if 문
 
-- 산술연산자
-- 할당연산자
-- 비교연산자
-- 논리연산자
+## 6.1 if ~ 구문
 
-## 4.1 산술연산자
+- 참, 거짓에 따라 특정 코드의 실행을 제어
 
 ```txt
-+
--
-*
-/
-% 나머지 계산
-** 거듭제곱 계산
-++ 1증가
--- 1감소
-```
-
-## 4.2 할당연산자
-
-- 할당(assignment) 연산자는 데이터나 변수 값을 변수에 저장, 즉 메모리 공간에 할당하는 역할
-
-```js
-let a = 10,
-  b = 20,
-  c = 30,
-  d = 40,
-  e = 50;
-
-let f = "안녕";
-
-a += 3; // 13, a=a+3
-b -= 8; // 12, b=b-8
-c *= 2; // 60, c=c*2
-d /= 10; // 4, d=d/10
-e %= 6; // 2, e=e%6
-f += "하세요"; //"안녕하세요", f=f+"하세요"
+if(조건식){
+  문장;
+  ...
+}
 ```
 
 ```js
-let name = "홍길동";
-let tel = "010-1234-5678";
-let age = 30;
+let x = 10000; // 입장료 10000원
+let age = 70;
 
-let text = "";
-text += "<table border=1>";
-text += "<tr><th>이름</th><th>전화번호</th><th>나이</th></tr>";
-text +=
-  "<tr><td>" + name + "</td><td>" + tel + "</td><td>" + age + "</td></tr>";
-text += "</table>";
+if (age >= 65) {
+  // 입장료: 0원
+  x = 0;
+}
+console.log(`입장료: ${x}원`);
 
-document.write(text);
+//웹사이트 관리자는 아이디(id)가 admin이거나 level이 1인경우라고 가정
+// 관리자일 경우 "관리자입니다."라고 출력
+
+let id = "admin";
+let level = 5;
+
+if (id === "admin" || level === 1) {
+  console.log("관리자입니다.");
+}
+
+// 필기시험 성적과 실기시험 성적 모두 80이상 합격
+let score1 = 95; //필기
+let score2 = 80; //실기
+
+if (score1 >= 80 && score2 >= 80) {
+  console.log("합격");
+}
 ```
 
-## 4.3 비교연산자
+## 6.2 if ~ else ~구분
+
+```txt
+if(조건식){
+  문장;
+  ...
+} else {
+  문장;
+  ...
+}
+```
 
 ```js
-let a = 3,
-  b = "3",
-  c = 5,
-  d = 3;
+let num = 9;
 
-console.log(a == b); // true
-console.log(a === b); // false
-console.log(a != b); // false
-console.log(a !== b); // true
-console.log(a > c); // false
-console.log(a < c); // true
-console.log(a >= c); // false
-console.log(a <= c); // true
+if (num % 2 == 0) {
+  console.log(`${num}은(는) 짝수입니다`);
+} else {
+  console.log(`${num}은(는) 홀수입니다`);
+}
+
+// 70점 이상이면 합격, 그렇지 않으면 불합격
+let score = 65;
+let result = "";
+
+if (score >= 70) {
+  result = "합격";
+} else {
+  result = "불합격";
+}
+console.log(result);
 ```
 
-## 4.4 논리 연산자
+## 6.2 if ~ else if ~ else 구문
 
-- && : AND 두 조건이 모두 true일 경우에만 최종결과 true
-- || : OR 두 조건중 하나만 true가 되어도 최종결과는 true
-- ! : NOT 결과가 true인 경우 false, 반대로 false인 경우 true
+```txt
+if(조건식){
+  문장;
+  ...
+} else if(조건식2){
+  문장;
+  ...
+} else if(조건식2){
+  문장;
+  ...
+} else{
+  문장:
+  ...
+}
+```
+
+## 7. switch 문
+
+- if문과 거의 같은 방식으로 동작
+
+```js
+// 괄호 안에 있는 변수의 값에 따라
+switch(변수){
+  // 해당 case에 있는 문장들이 실행
+  case 값1:
+    문장;
+    ...
+    break;
+
+  case 값2:
+    문장;
+    ...
+    break;
+    default:
+    문장;
+}
+```
