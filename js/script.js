@@ -1,5 +1,5 @@
-const scores = [88, 75, 95, 90];
+let x = -10;
 
-for (let score of scores) {
-  console.log(score);
-}
+do {
+  console.log("안녕!");
+} while (x > 0);
