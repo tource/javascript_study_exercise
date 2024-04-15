@@ -1,6 +1,9 @@
-const animals = ["사자", "호랑이", "사슴", "펭귄", "여우", "도마뱀"];
+const numbers = [1, 2, 3, 4, 5];
 
-// 인덱스 1부터 인덱스 4 사이(4는 포함하지 않음)의 요소
-const result = animals.slice(1, 4);
+// map()메서드는 forEach()메서드와 달리 매개변수로 사용되는 함수에서
+// 값을 반환하는 return이존재
+// map( 메서드)
+let arr = numbers.map((num) => num * num);
+console.log(arr);
 
-console.log(result);
+document.getElementById("show").innerHTML = arr;
