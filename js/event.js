@@ -1,13 +1,4 @@
-let text = "";
-
-const btn = document.getElementById("btn");
-
-btn.addEventListener("click", function () {
-  text += "안녕하세요!<br>";
+function showCoord(event) {
+  let text = "좌표: (" + event.clientX + "," + event.clientY + ")";
   document.getElementById("show").innerHTML = text;
-});
-
-btn.addEventListener("click", function () {
-  text += "반갑습니다!<br>";
-  document.getElementById("show").innerHTML = text;
-});
+}
